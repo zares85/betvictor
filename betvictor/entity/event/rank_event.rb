@@ -1,7 +1,7 @@
 module Betvictor
   module Entity
 
-    class RankEvent < AbstractStatus
+    class RankEvent < AbstractEvent
 
       attr_accessor :pos
 

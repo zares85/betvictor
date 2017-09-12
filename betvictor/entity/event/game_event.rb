@@ -1,7 +1,7 @@
 module Betvictor
   module Entity
 
-    class GameEvent < AbstractStatus
+    class GameEvent < AbstractEvent
 
       attr_accessor :score, :home_team, :away_team
 
