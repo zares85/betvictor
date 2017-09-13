@@ -25,6 +25,13 @@ module Betvictor
     autoload :OutcomeRepository, 'betvictor/repository/outcome_repository'
     autoload :EventRepository, 'betvictor/repository/event_repository'
     autoload :SportRepository, 'betvictor/repository/sport_repository'
+    autoload :PriceRepository, 'betvictor/repository/price_repository'
+    autoload :MarketRepository, 'betvictor/repository/market_repository'
+  end
+
+  module Hydrator
+    autoload :AbstractStrategy, 'betvictor/hydrator/strategy/abstract_strategy'
+    autoload :OutcomeStrategy, 'betvictor/hydrator/strategy/outcome_strategy'
   end
 
 end

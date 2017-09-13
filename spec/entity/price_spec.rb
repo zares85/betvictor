@@ -1,4 +1,4 @@
-require_relative '../autoload'
+require_relative '../../autoload'
 
 describe Betvictor::Entity::Price do
 
