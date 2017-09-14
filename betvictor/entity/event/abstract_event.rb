@@ -3,7 +3,7 @@ module Betvictor
 
     class AbstractEvent
 
-      attr_accessor :id, :outcomes, :title, :meeting, :status, :virtual
+      attr_accessor :id, :outcomes, :title, :meeting, :status, :virtual, :position
 
     end
 

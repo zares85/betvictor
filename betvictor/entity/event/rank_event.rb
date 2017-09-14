@@ -3,8 +3,6 @@ module Betvictor
 
     class RankEvent < AbstractEvent
 
-      attr_accessor :pos
-
     end
 
   end

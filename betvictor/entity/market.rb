@@ -3,7 +3,7 @@ module Betvictor
 
     class Market
 
-      attr_accessor :id, :description
+      attr_accessor :id, :name
 
     end
 
