@@ -3,15 +3,16 @@ module Betvictor
 
     class RecursiveStrategy < BasicStrategy
 
+      @strategy
       @strategies
 
-      def initialize(mapping, object_class, strategies)
-        super(mapping, object_class)
+      def initialize(strategy, strategies)
+        @strategy = strategy
         @strategies = strategies
       end
 
       def hydrate(hash)
-        self.strategies(super(hash))
+        self.strategies(@strategy.hydrate(hash))
       end
 
       protected

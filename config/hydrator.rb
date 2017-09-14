@@ -1,12 +1,14 @@
 {
-    :strategy => Betvictor::Hydrator::RecursiveStrategy,
+    :strategy => Betvictor::Hydrator::BasicStrategy,
+    :recursive => true,
     :object => Betvictor::Entity::Betting,
     :mapping => {
         :sports => :sports
     },
     :strategies => {
         :sports => {
-            :strategy => Betvictor::Hydrator::RecursiveStrategy,
+            :strategy => Betvictor::Hydrator::BasicStrategy,
+            :recursive => true,
             :repository => Betvictor::Repository::SportRepository,
             :object => Betvictor::Entity::Sport,
             :mapping => {
@@ -16,7 +18,8 @@
             },
             :strategies => {
                 :events => {
-                    :strategy => Betvictor::Hydrator::PolymorphismRecursiveStrategy,
+                    :strategy => Betvictor::Hydrator::PolymorphismStrategy,
+                    :recursive => true,
                     :repository => Betvictor::Repository::EventRepository,
                     :object => Betvictor::Entity::AbstractEvent,
                     :mapping => {
@@ -106,7 +109,8 @@
                             }
                         },
                         :outcomes => {
-                            :strategy => Betvictor::Hydrator::RecursiveStrategy,
+                            :strategy => Betvictor::Hydrator::BasicStrategy,
+                            :recursive => true,
                             :repository => Betvictor::Repository::OutcomeRepository,
                             :object => Betvictor::Entity::Outcome,
                             :mapping => {

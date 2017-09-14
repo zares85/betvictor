@@ -29,7 +29,8 @@ describe Betvictor::Hydrator::RecursiveStrategy do
     }
 
     it 'Hydrates the object and apply recursive strategy' do
-      strategy = Betvictor::Hydrator::RecursiveStrategy.new(mapping, RecursiveObjectTemp, strategies)
+      strategy = Betvictor::Hydrator::BasicStrategy.new(mapping, RecursiveObjectTemp)
+      strategy = Betvictor::Hydrator::RecursiveStrategy.new(strategy, strategies)
       object = strategy.hydrate(data)
       expect(object.class).to eql RecursiveObjectTemp
       expect(object.foo).to eql 'baz'
