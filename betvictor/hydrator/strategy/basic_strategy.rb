@@ -1,7 +1,7 @@
 module Betvictor
   module Hydrator
 
-    class AbstractStrategy
+    class BasicStrategy
 
       @mapping
       @object_class
@@ -11,10 +11,9 @@ module Betvictor
         @object_class = self.verify(object_class, Class)
       end
 
-      def hydrate(hash, object)
+      def hydrate(hash)
         self.verify(hash, Hash)
-        self.verify(object, @object_class)
-        self.map(hash, object)
+        self.map(@mapping, hash, @object_class.new)
       end
 
       protected
@@ -24,10 +23,11 @@ module Betvictor
         object
       end
 
-      def map(hash, object)
-        @mapping.each do |key, value|
+      def map(mapping, hash, object)
+        mapping.each do |key, value|
           object.send("#{key}=", hash[value])
         end
+        object
       end
 
     end

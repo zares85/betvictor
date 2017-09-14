@@ -29,8 +29,8 @@
                         :position => :pos
                     },
                     :polymorphism => {
-                        :type => :event_type,
-                        :entities => {
+                        :field => :event_type,
+                        :objects => {
                             :GAMEEVENT => {
                                 :object => Betvictor::Entity::GameEvent,
                                 :mapping => {
@@ -88,8 +88,8 @@
                             :object => Betvictor::Entity::AbstractStatus,
                             :mapping => {},
                             :polymorphism => {
-                                :type => :status_type,
-                                :entities => {
+                                :field => :status_type,
+                                :objects => {
                                     :text => {
                                         :object => Betvictor::Entity::RankEvent,
                                         :mapping => {

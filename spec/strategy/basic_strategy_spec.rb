@@ -1,4 +1,4 @@
-describe Betvictor::Hydrator::AbstractStrategy do
+describe Betvictor::Hydrator::BasicStrategy do
 
   context 'Given a mapping and data' do
 
@@ -10,9 +10,9 @@ describe Betvictor::Hydrator::AbstractStrategy do
     end
 
     it 'Hydrates the object' do
-      object = ObjectTemp.new
-      strategy = Betvictor::Hydrator::AbstractStrategy.new(mapping, object.class)
-      strategy.hydrate(data, object)
+      strategy = Betvictor::Hydrator::BasicStrategy.new(mapping, ObjectTemp)
+      object = strategy.hydrate(data)
+      expect(object.class).to eql ObjectTemp
       expect(object.foo).to eql 'baz'
       expect(object.bar).to eql 123
     end

@@ -30,8 +30,13 @@ module Betvictor
   end
 
   module Hydrator
-    autoload :AbstractStrategy, 'betvictor/hydrator/strategy/abstract_strategy'
-    autoload :OutcomeStrategy, 'betvictor/hydrator/strategy/outcome_strategy'
+    autoload :BasicStrategy, 'betvictor/hydrator/strategy/basic_strategy'
+    autoload :RecursiveStrategy, 'betvictor/hydrator/strategy/recursive_strategy'
+    autoload :PolymorphismStrategy, 'betvictor/hydrator/strategy/polymorphism_strategy'
+  end
+
+  module Factory
+    autoload :StrategyFactory, 'betvictor/factory/strategy_factory'
   end
 
 end
