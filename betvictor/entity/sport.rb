@@ -3,7 +3,7 @@ module Betvictor
 
     class Sport
 
-      attr_accessor :id, :title, :virtual, :events, :pos
+      attr_accessor :id, :title, :virtual, :events, :position
 
     end
 

@@ -5,18 +5,14 @@ module Betvictor
 
       def self.create(data)
 
-        if data[:strategy] == Betvictor::Hydrator::BasicStrategy
-          strategy = data[:strategy].new(data[:mapping], data[:object])
-
-        elsif data[:strategy] == Betvictor::Hydrator::PolymorphismStrategy
-          strategy = data[:strategy].new(data[:mapping], data[:entity], data[:polymorphism])
-
+        if data[:polymorphism]
+          strategy = Betvictor::Hydrator::PolymorphismStrategy.new(data[:mapping], data[:polymorphism])
         else
-          raise ArgumentError
+          strategy = Betvictor::Hydrator::BasicStrategy.new(data[:mapping], data[:object])
         end
 
-        if data[:recursive] == Betvictor::Hydrator::RecursiveStrategy
-          strategyBetvictor::Hydrator::RecursiveStrategy.new(strategy, data[:strategies])
+        if data[:strategies]
+          strategy = Betvictor::Hydrator::RecursiveStrategy.new(strategy, data[:strategies])
         end
 
         strategy

@@ -3,7 +3,10 @@ $LOAD_PATH << __dir__
 
 module Betvictor
 
+  autoload :Config, 'config/config'
+
   module Entity
+    autoload :Betting, 'betvictor/entity/betting'
     autoload :AbstractEvent, 'betvictor/entity/event/abstract_event'
     autoload :GameEvent, 'betvictor/entity/event/game_event'
     autoload :RankEvent, 'betvictor/entity/event/rank_event'
