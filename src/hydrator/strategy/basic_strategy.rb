@@ -11,9 +11,9 @@ module Betvictor
         @object_class = self.verify(object_class, Class)
       end
 
-      def hydrate(hash)
-        self.verify(hash, Hash)
-        self.map(@mapping, hash, @object_class.new)
+      def hydrate(data)
+        self.verify(data, Hash)
+        self.map(@mapping, data, @object_class.new)
       end
 
       protected
@@ -23,9 +23,9 @@ module Betvictor
         object
       end
 
-      def map(mapping, hash, object)
+      def map(mapping, data, object)
         mapping.each do |key, value|
-          object.send("#{key}=", hash[value])
+          object.send("#{key}=", data[value])
         end
         object
       end

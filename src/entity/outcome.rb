@@ -3,7 +3,7 @@ module Betvictor
 
     class Outcome
 
-      attr_accessor :id, :description, :price, :market
+      attr_accessor :id, :description, :price, :market, :position
 
     end
 

@@ -6,40 +6,40 @@ module Betvictor
   autoload :Config, 'config/config'
 
   module Entity
-    autoload :Betting, 'betvictor/entity/betting'
-    autoload :AbstractEvent, 'betvictor/entity/event/abstract_event'
-    autoload :GameEvent, 'betvictor/entity/event/game_event'
-    autoload :RankEvent, 'betvictor/entity/event/rank_event'
-    autoload :AbstractStatus, 'betvictor/entity/status/abstract_status'
-    autoload :ClockStatus, 'betvictor/entity/status/clock_status'
-    autoload :TextStatus, 'betvictor/entity/status/text_status'
-    autoload :Market, 'betvictor/entity/market'
-    autoload :Meeting, 'betvictor/entity/meeting'
-    autoload :Outcome, 'betvictor/entity/outcome'
-    autoload :Price, 'betvictor/entity/price'
-    autoload :Score, 'betvictor/entity/score'
-    autoload :Sport, 'betvictor/entity/sport'
-    autoload :Team, 'betvictor/entity/team'
+    autoload :Betting, 'src/entity/betting'
+    autoload :AbstractEvent, 'src/entity/event/abstract_event'
+    autoload :GameEvent, 'src/entity/event/game_event'
+    autoload :RankEvent, 'src/entity/event/rank_event'
+    autoload :AbstractStatus, 'src/entity/status/abstract_status'
+    autoload :ClockStatus, 'src/entity/status/clock_status'
+    autoload :TextStatus, 'src/entity/status/text_status'
+    autoload :Market, 'src/entity/market'
+    autoload :Meeting, 'src/entity/meeting'
+    autoload :Outcome, 'src/entity/outcome'
+    autoload :Price, 'src/entity/price'
+    autoload :Score, 'src/entity/score'
+    autoload :Sport, 'src/entity/sport'
+    autoload :Team, 'src/entity/team'
   end
 
   module Repository
-    autoload :AbstractRepository, 'betvictor/repository/abstract_repository'
-    autoload :MemoryRepository, 'betvictor/repository/memory_repository'
-    autoload :OutcomeRepository, 'betvictor/repository/outcome_repository'
-    autoload :EventRepository, 'betvictor/repository/event_repository'
-    autoload :SportRepository, 'betvictor/repository/sport_repository'
-    autoload :PriceRepository, 'betvictor/repository/price_repository'
-    autoload :MarketRepository, 'betvictor/repository/market_repository'
+    autoload :AbstractRepository, 'src/repository/abstract_repository'
+    autoload :MemoryRepository, 'src/repository/memory_repository'
+    autoload :OutcomeRepository, 'src/repository/outcome_repository'
+    autoload :EventRepository, 'src/repository/event_repository'
+    autoload :SportRepository, 'src/repository/sport_repository'
+    autoload :PriceRepository, 'src/repository/price_repository'
+    autoload :MarketRepository, 'src/repository/market_repository'
   end
 
   module Hydrator
-    autoload :BasicStrategy, 'betvictor/hydrator/strategy/basic_strategy'
-    autoload :RecursiveStrategy, 'betvictor/hydrator/strategy/recursive_strategy'
-    autoload :PolymorphismStrategy, 'betvictor/hydrator/strategy/polymorphism_strategy'
+    autoload :BasicStrategy, 'src/hydrator/strategy/basic_strategy'
+    autoload :RecursiveStrategy, 'src/hydrator/strategy/recursive_strategy'
+    autoload :PolymorphismStrategy, 'src/hydrator/strategy/polymorphism_strategy'
   end
 
   module Factory
-    autoload :StrategyFactory, 'betvictor/factory/strategy_factory'
+    autoload :StrategyFactory, 'src/factory/strategy_factory'
   end
 
 end
