@@ -1,0 +1,8 @@
+<h2>Sports</h2>
+<ul>
+  <% @sports.each do |sport| %>
+      <li>
+        <a href="/sports/<%= sport.id %>/events"><%= sport.title %></a>
+      </li>
+  <% end %>
+</ul>

@@ -1,0 +1,25 @@
+<h2><a href="/sports/<%= @sport.id %>/events"><%= @sport.title %></a></h2>
+<h3><%= @event.title %></h3>
+<dl>
+  <dt>Meeting</dt>
+  <dd><%= @event.meeting.name %></dd>
+  <% if @event.status.is_a? Betvictor::Entity::ClockStatus %>
+      <dt>Time</dt>
+      <dd><%= @event.status.duration %></dd>
+  <% elsif @event.status.is_a? Betvictor::Entity::TextStatus %>
+      <dt>Status</dt>
+      <dd><%= @event.status.text %></dd>
+  <% end %>
+  <% if @event.is_a? Betvictor::Entity::GameEvent %>
+      <dt>Score</dt>
+      <dd><%= @event.score %></dd>
+  <% end %>
+</dl>
+<h4>Outcomes</h4>
+<ul>
+  <% @outcomes.each do |outcome| %>
+      <li>
+        <a href="/sports/<%= @sport.id %>/events/<%= @event.id %>/outcomes/<%= outcome.id %>"><%= outcome.description %></a>
+      </li>
+  <% end %>
+</ul>

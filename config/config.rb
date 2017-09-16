@@ -91,9 +91,9 @@ module Betvictor
                                       :field => :status_type,
                                       :objects => {
                                           'text' => {
-                                              :object => Betvictor::Entity::RankEvent,
+                                              :object => Betvictor::Entity::TextStatus,
                                               :mapping => {
-                                                  :position => :pos
+                                                  :text => :status
                                               }
                                           },
                                           'clock' => {
